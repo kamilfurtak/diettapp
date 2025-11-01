@@ -156,3 +156,163 @@
 [info] ✔  Wrote firestore.indexes.json 
 [info] ✔  Wrote configuration info to firebase.json 
 [info] ✔  Wrote project information to .firebaserc 
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:19.880Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.881Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.905Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.906Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.907Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.911Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.913Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.917Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.917Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.918Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.919Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.919Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.919Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.920Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.921Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.921Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.921Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.921Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.922Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.924Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.924Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.924Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.925Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.925Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.925Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.926Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.935Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.936Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.936Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.936Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.937Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.937Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.937Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.937Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.937Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.937Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.938Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.938Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.938Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.939Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.939Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.939Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.939Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.939Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.940Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.940Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.940Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.940Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.940Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.941Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.941Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.941Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.941Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.941Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.941Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.942Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.942Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.942Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.942Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.942Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.945Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.945Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.945Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.945Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.946Z] No OAuth tokens found
+[debug] [2025-11-01T17:51:19.946Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:19.946Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:19.949Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.949Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.980Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.980Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.983Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.983Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.986Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.986Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.988Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.988Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.990Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.990Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.992Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.993Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.995Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com [none]
+[debug] [2025-11-01T17:51:19.995Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:19.998Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com [none]
+[debug] [2025-11-01T17:51:19.998Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.000Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-11-01T17:51:20.000Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.002Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-11-01T17:51:20.002Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.004Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com [none]
+[debug] [2025-11-01T17:51:20.004Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.006Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-11-01T17:51:20.006Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.008Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-11-01T17:51:20.008Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.009Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-11-01T17:51:20.010Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.011Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com [none]
+[debug] [2025-11-01T17:51:20.012Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:51:20.415Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com 200
+[debug] [2025-11-01T17:51:20.415Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.717Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com 403
+[debug] [2025-11-01T17:51:20.718Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com [omitted]
+[debug] [2025-11-01T17:51:20.772Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com 403
+[debug] [2025-11-01T17:51:20.772Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseio.com [omitted]
+[debug] [2025-11-01T17:51:20.793Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com 200
+[debug] [2025-11-01T17:51:20.794Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.826Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-11-01T17:51:20.826Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.848Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-11-01T17:51:20.851Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.866Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-11-01T17:51:20.866Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.868Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com 200
+[debug] [2025-11-01T17:51:20.869Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.878Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com 200
+[debug] [2025-11-01T17:51:20.878Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.901Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-11-01T17:51:20.901Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.901Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-11-01T17:51:20.901Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.919Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com 200
+[debug] [2025-11-01T17:51:20.919Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/fcm.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.928Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com 200
+[debug] [2025-11-01T17:51:20.928Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.939Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com 200
+[debug] [2025-11-01T17:51:20.940Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/storage.googleapis.com [omitted]
+[debug] [2025-11-01T17:51:20.948Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-11-01T17:51:20.948Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/firebasedataconnect.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:20.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:20.954Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:20.955Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:20.955Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:51:20.964Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com 200
+[debug] [2025-11-01T17:51:20.965Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudfunctions.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:21.004Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:21.004Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:21.009Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:21.011Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:21.019Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:21.020Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:51:21.022Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:51:21.022Z] > authorizing via signed-in user (kamil.furtak@gmail.com)

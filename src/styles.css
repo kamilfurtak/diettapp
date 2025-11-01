@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  background-color: #1a202c; /* This is a dark slate gray color. You can change it to match your app's theme. */
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
