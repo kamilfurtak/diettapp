@@ -1,0 +1,132 @@
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:18:02.421Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:02.427Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.036Z] Running auto auth
+[debug] [2025-11-01T17:18:26.040Z] Running auto auth
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:18:26.296Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.297Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:18:26.315Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.315Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:18:26.377Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.378Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:18:26.378Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.378Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:18:26.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.385Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:18:26.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:18:26.400Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:09.842Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:09.842Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:09.850Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:09.851Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:15.635Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:15.635Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:15.641Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:15.641Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:19:15.643Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:15.646Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-11-01T17:19:16.073Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-11-01T17:19:16.073Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:22.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:22.907Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:22.912Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:22.913Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:19:22.919Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:22.919Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2025-11-01T17:19:22.920Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudresourcemanager.googleapis.com x-goog-quota-user=projects/diettapp-7588d
+[debug] [2025-11-01T17:19:23.816Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudresourcemanager.googleapis.com 200
+[debug] [2025-11-01T17:19:23.816Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/diettapp-7588d/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2025-11-01T17:19:23.825Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:23.825Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/diettapp-7588d [none]
+[debug] [2025-11-01T17:19:24.085Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/diettapp-7588d 200
+[debug] [2025-11-01T17:19:24.086Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/diettapp-7588d {"projectNumber":"244690382247","projectId":"diettapp-7588d","lifecycleState":"ACTIVE","name":"DiettApp","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-11-01T16:02:44.258477Z"}
+[info] Updating Studio Workspace active project to match Firebase CLI 'diettapp-7588d'
+[error] Failed to update Firebase Project for Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[info] Now using project diettapp-7588d
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:30.469Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:30.470Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:30.474Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:30.475Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:19:30.476Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:30.477Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps pageSize=100
+[debug] [2025-11-01T17:19:30.747Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps 200
+[debug] [2025-11-01T17:19:30.747Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps {}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:34.000Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:34.001Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:34.008Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:34.008Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:19:34.016Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:34.020Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps [none]
+[debug] [2025-11-01T17:19:34.021Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps {"displayName":"DiettApp Web"}
+[debug] [2025-11-01T17:19:35.285Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps 200
+[debug] [2025-11-01T17:19:35.286Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps {"name":"operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0"}
+[debug] [2025-11-01T17:19:35.288Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:35.288Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 [none]
+[debug] [2025-11-01T17:19:35.592Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 200
+[debug] [2025-11-01T17:19:35.592Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 {"name":"operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0"}
+[debug] [2025-11-01T17:19:36.093Z] [Create Web app Poller] Retrying task index 0
+[debug] [2025-11-01T17:19:36.094Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:36.097Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 [none]
+[debug] [2025-11-01T17:19:36.493Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 200
+[debug] [2025-11-01T17:19:36.494Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 {"name":"operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0"}
+[debug] [2025-11-01T17:19:37.495Z] [Create Web app Poller] Retrying task index 0
+[debug] [2025-11-01T17:19:37.496Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:37.496Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 [none]
+[debug] [2025-11-01T17:19:37.793Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 200
+[debug] [2025-11-01T17:19:37.794Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 {"name":"operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0"}
+[debug] [2025-11-01T17:19:39.796Z] [Create Web app Poller] Retrying task index 0
+[debug] [2025-11-01T17:19:39.799Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:39.800Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 [none]
+[debug] [2025-11-01T17:19:40.230Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 200
+[debug] [2025-11-01T17:19:40.231Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0 {"name":"operations/workflows/MWU3ZDg3ZDktNjg1My00Yzk4LTkxZGMtYmFmNWFjMDRlYjU0","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.WebApp","name":"projects/diettapp-7588d/webApps/1:244690382247:web:48c6439c379782d1a25a82","appId":"1:244690382247:web:48c6439c379782d1a25a82","displayName":"DiettApp Web","projectId":"diettapp-7588d","webId":"YTNiMmFmMDctNzRhYy00MDYzLWE3OGUtMzI2ZmY1ODdhZjJh","apiKeyId":"7519be1a-c84d-4237-9a2b-2c45372f9ee8","state":"ACTIVE","expireTime":"1970-01-01T00:00:00Z","etag":"1_3d45dc5f-2066-4eb4-a1a1-09ae9b4517ff"}}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:46.492Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:46.493Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-11-01T17:19:46.498Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-01T17:19:46.498Z] > authorizing via signed-in user (kamil.furtak@gmail.com)
+[debug] [2025-11-01T17:19:46.501Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:46.501Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps pageSize=100
+[debug] [2025-11-01T17:19:46.757Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps 200
+[debug] [2025-11-01T17:19:46.758Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/diettapp-7588d/webApps {"apps":[{"name":"projects/diettapp-7588d/webApps/1:244690382247:web:48c6439c379782d1a25a82","appId":"1:244690382247:web:48c6439c379782d1a25a82","displayName":"DiettApp Web","projectId":"diettapp-7588d","webId":"YTNiMmFmMDctNzRhYy00MDYzLWE3OGUtMzI2ZmY1ODdhZjJh","apiKeyId":"7519be1a-c84d-4237-9a2b-2c45372f9ee8","state":"ACTIVE","expireTime":"1970-01-01T00:00:00Z","etag":"1_3d45dc5f-2066-4eb4-a1a1-09ae9b4517ff"}]}
+[debug] [2025-11-01T17:19:46.759Z] No OAuth tokens found
+[debug] [2025-11-01T17:19:46.760Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:244690382247:web:48c6439c379782d1a25a82/config [none]
+[debug] [2025-11-01T17:19:47.374Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:244690382247:web:48c6439c379782d1a25a82/config 200
+[debug] [2025-11-01T17:19:47.375Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:244690382247:web:48c6439c379782d1a25a82/config {"projectId":"diettapp-7588d","appId":"1:244690382247:web:48c6439c379782d1a25a82","storageBucket":"diettapp-7588d.firebasestorage.app","apiKey":"AIzaSyA4dXpVjZGGGZm8IkUpQPo2YYsSFPjQSto","authDomain":"diettapp-7588d.firebaseapp.com","messagingSenderId":"244690382247","projectNumber":"244690382247","version":"2"}
