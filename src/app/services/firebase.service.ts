@@ -39,19 +39,19 @@ export class FirebaseService {
     this.auth = getAuth(this.app);
     this.db = getFirestore(this.app);
 
-    onAuthStateChanged(this.auth, (user) => {
+    onAuthStateChanged(this.auth, (user: any) => {
       if (user) {
         this.user.set(user);
         this.isReady.set(true);
       } else {
-        signInAnonymously(this.auth).catch(error => {
+        signInAnonymously(this.auth).catch((error: any) => {
           console.error('Anonymous sign-in failed', error);
           this.isReady.set(true); // Unblock app even if auth fails
         });
       }
     });
   }
-  
+
   private getTodaysDateString(): string {
     return new Date().toISOString().split('T')[0];
   }
@@ -71,7 +71,7 @@ export class FirebaseService {
   async addMeals(userId: string, meals: Meal[]): Promise<void> {
     const dateStr = this.getTodaysDateString();
     const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
-    
+
     const promises = meals.map(meal => addDoc(mealsColRef, meal));
     await Promise.all(promises);
   }

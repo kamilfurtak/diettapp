@@ -9,10 +9,11 @@ import { Meal } from '../models/meal.model';
 })
 export class GeminiService {
   private ai: GoogleGenAI;
-  
+
   constructor() {
     // FIX: Adhere to guidelines by using process.env.API_KEY directly.
     // The execution environment is expected to have this variable available.
+    // @ts-ignore
     this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   }
 
@@ -27,7 +28,7 @@ export class GeminiService {
     };
 
     const textPart = { text: prompt };
-    
+
     const schema = {
         type: Type.ARRAY,
         items: {
@@ -52,7 +53,8 @@ export class GeminiService {
             responseSchema: schema
         }
       });
-      
+
+      // @ts-ignore
       const jsonString = response.text.trim();
       const result = JSON.parse(jsonString);
       return result as Meal[];
