@@ -10,7 +10,7 @@
     },
     "chrome-devtools": {
       "type": "stdio",
-      "command": "npx",
+      "command": "CHROME_HEADLESS=true npx",
       "args": [
         "chrome-devtools-mcp@latest"
       ]
