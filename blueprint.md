@@ -1,43 +1,47 @@
-# Diet Tracker Application Blueprint
+# Blueprint
 
 ## Overview
 
-This document outlines the plan for developing and enhancing the Diet Tracker application. The application is designed to help users track their daily meals, monitor their diet plans, and maintain a streak of healthy eating.
+This document outlines the plan for creating a comprehensive E2E test suite for the Diet App using Cypress. The goal is to ensure the application's stability, functionality, and reliability.
 
-## Implemented Features
+## Style, Design, and Features
 
-### Core Features:
-- **Meal Logging:** Users can log their meals for different categories (Breakfast, Lunch, Dinner, Snacks).
-- **Diet Plan:** Users can set and view their daily diet plan, which includes target calories, protein, carbs, and fats.
-- **Streak Tracking:** The application tracks the user's streak of meeting their diet goals.
+The application is a modern, single-page application built with Angular. It features a clean, user-friendly interface with the following key components:
 
-### UI/UX:
-- **Tab-based Navigation:** The application uses a bottom navigation bar to switch between the "Log," "Plan," and "Streak" views.
-- **Unified View:** All content is displayed within a single, integrated view, providing a seamless user experience.
-- **Responsive Design:** The application is designed to be responsive and work well on various screen sizes.
+*   **Calendar:** Allows users to navigate between different days.
+*   **Meal Log:** Displays the meals for the selected day.
+*   **Add Meal:** A form for adding new meals to the log.
+*   **Favorite Products:** A list of the user's favorite products for quick-add.
+*   **Diet Plan:** Shows the user's daily caloric and macronutrient goals.
+*   **Streak:** Tracks the user's consistency in meeting their diet goals.
 
-## Current Task: Implement the Streak Calendar
+## E2E Test Plan
 
-### Plan:
+### Phase 1: Basic Smoke Tests
 
-**Phase 1: Implement the Streak Calendar UI**
+1.  **Application Loads:** Verify that the application loads successfully without any console errors.
+2.  **Initial State:** Check that all the main components (Calendar, Meal Log, etc.) are present on the initial screen.
 
-1.  **Analyze the existing `streak.ts` and `streak.html` files:** Examine the current implementation of the streak component to understand its structure, data, and logic.
-2.  **Create a dedicated calendar component:** Generate a new `CalendarComponent` to encapsulate the calendar's functionality and keep the code organized.
-3.  **Implement the calendar grid:** Use HTML and CSS to create a visually appealing calendar grid that displays the days of the week and the days of the month.
-4.  **Display the current month and year:** Add controls to the calendar to allow users to navigate between months and view the current month and year.
-5.  **Integrate the calendar component into the streak view:** Add the new `CalendarComponent` to the `streak.html` file to display it within the streak view.
+### Phase 2: Core Functionality
 
-**Phase 2: Track and Display Streaks**
+1.  **Add a Meal:**
+    *   Open the "Add Meal" form.
+    *   Fill in the form with valid data.
+    *   Submit the form.
+    *   Verify that the new meal appears in the "Meal Log".
+    *   Verify that the "Diet Plan" totals are updated correctly.
+2.  **Navigate Calendar:**
+    *   Click the "next" and "previous" buttons on the calendar.
+    *   Verify that the "Meal Log" updates to show the meals for the selected day.
+3.  **Use Favorite Products:**
+    *   Click on a product in the "Favorite Products" list.
+    *   Verify that the product is added to the "Add Meal" form.
 
-1.  **Update the `CalendarComponent` to receive streak data:** Modify the `CalendarComponent` to accept an array of dates representing the user's streak.
-2.  **Highlight streak days on the calendar:** Add logic to the `CalendarComponent` to visually highlight the days the user has maintained their streak.
-3.  **Create a mock streak service:** Develop a `StreakService` to provide a hardcoded array of dates for testing and development purposes.
-4.  **Integrate the streak service with the streak view:** Inject the `StreakService` into the `StreakComponent` and pass the streak data to the `CalendarComponent`.
+### Phase 3: Validation and Edge Cases
 
-**Phase 3: Refine and Polish**
-
-1.  **Add styling and animations:** Enhance the visual appeal of the calendar and streak view with custom styling and animations.
-2.  **Ensure responsive design:** Verify that the calendar and streak view are responsive and adapt to different screen sizes.
-3.  **Test and debug:** Thoroughly test the implementation to identify and fix any bugs.
-
+1.  **Empty Meal Form:**
+    *   Try to submit the "Add Meal" form with empty fields.
+    *   Verify that appropriate validation messages are displayed.
+2.  **Future Dates:**
+    *   Navigate to a future date in the calendar.
+    *   Verify that the "Add Meal" functionality is disabled.
