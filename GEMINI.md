@@ -1,3 +1,6 @@
+- always use nx build to build app
+- when use MCP chrome-devtools always use http://localhost:9000 url 
+
 <!-- nx configuration start-->
 <!-- Leave the start & end comments to automatically receive updates. -->
 

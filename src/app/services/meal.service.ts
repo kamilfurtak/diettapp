@@ -141,10 +141,19 @@ export class MealService {
   }
 
   async removeMeal(mealId: string) {
-    this.meals.update(meals => meals.filter(m => m.id !== mealId));
     const uid = this.firebaseService.user()?.uid;
-    if (uid) {
+    if (!uid) return;
+
+    const mealToRemove = this.meals().find(m => m.id === mealId);
+    if (!mealToRemove) return;
+
+    this.meals.update(meals => meals.filter(m => m.id !== mealId));
+
+    try {
       await this.firebaseService.removeMeal(uid, mealId);
+    } catch (error) {
+      console.error('Failed to remove meal from database:', error);
+      this.meals.update(meals => [...meals, mealToRemove]);
     }
   }
 
