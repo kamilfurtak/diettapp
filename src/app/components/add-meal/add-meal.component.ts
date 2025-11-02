@@ -14,7 +14,7 @@ type Status = 'idle' | 'capturing' | 'captured' | 'analyzing' | 'results' | 'err
   selector: 'app-add-meal',
   templateUrl: './add-meal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule] 
+  imports: [CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class AddMealComponent implements OnDestroy {
   @ViewChild('video') video?: ElementRef<HTMLVideoElement>;
@@ -34,6 +34,7 @@ export class AddMealComponent implements OnDestroy {
   errorMessage = signal<string>('');
   mealForm: FormGroup;
   favoriteMeals = this.mealService.favoriteMeals;
+  public fromFavorites = signal(false);
   
   private stream: MediaStream | null = null;
 
@@ -44,10 +45,23 @@ export class AddMealComponent implements OnDestroy {
       protein: ['', [Validators.required, Validators.min(0)]],
       carbs: ['', [Validators.required, Validators.min(0)]],
       fat: ['', [Validators.required, Validators.min(0)]],
+      category: [null as MealCategory | null, []] 
     });
 
-    this.route.params.subscribe(params => {
-      this.category.set(params['category'] as MealCategory);
+    this.route.queryParams.subscribe(params => {
+      const category = params['category'] as MealCategory;
+      const from = params['from'];
+
+      if (from === 'favorites') {
+        this.fromFavorites.set(true);
+        this.status.set('adding');
+        this.mealForm.get('category')?.setValidators([Validators.required]);
+      } else {
+        this.category.set(category);
+        this.fromFavorites.set(false);
+        this.mealForm.get('category')?.clearValidators();
+      }
+      this.mealForm.get('category')?.updateValueAndValidity();
     });
 
     effect(() => {
@@ -61,14 +75,28 @@ export class AddMealComponent implements OnDestroy {
 
   addMeal() {
     if (this.mealForm.valid) {
+      const newMealData = this.mealForm.value;
+      const mealCategory = this.fromFavorites() ? newMealData.category : this.category();
+
+      if (!mealCategory) {
+        console.error('Meal category is not set.');
+        return;
+      }
+
       const newMeal: Meal = {
-        ...this.mealForm.value,
-        category: this.category(),
+        ...newMealData,
+        category: mealCategory,
         portion: 1,
         date: new Date().toISOString()
       };
-      this.mealService.addMeals([newMeal]);
-      this.router.navigate(['/log']);
+
+      if (this.fromFavorites()) {
+        this.mealService.addFavoriteMeal(newMeal);
+        this.router.navigate(['/favorites']);
+      } else {
+        this.mealService.addMeals([newMeal]);
+        this.router.navigate(['/log']);
+      }
     }
   }
   
