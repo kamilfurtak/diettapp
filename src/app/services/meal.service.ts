@@ -2,6 +2,7 @@ import { Injectable, signal, computed, WritableSignal, Signal, inject, effect } 
 import { Meal, MealCategory } from '../models/meal.model';
 import { DietPlan } from '../models/diet-plan.model';
 import { FirebaseService } from './firebase.service';
+import { FavoriteProduct } from '../models/favorite-product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,7 @@ export class MealService {
   loading = signal<boolean>(true);
   meals: WritableSignal<Meal[]> = signal([]);
   activePlan = signal<DietPlan | null>(null);
+  favoriteMeals: WritableSignal<FavoriteProduct[]> = signal([]);
 
   readonly isPlanActiveToday: Signal<boolean>;
 
@@ -114,13 +116,15 @@ export class MealService {
     }
     
     try {
-        const [meals, plan] = await Promise.all([
+        const [meals, plan, favorites] = await Promise.all([
             this.firebaseService.getMealsForToday(uid),
-            this.firebaseService.getDietPlan(uid)
+            this.firebaseService.getDietPlan(uid),
+            this.firebaseService.getFavoriteProducts(uid)
         ]);
 
         this.meals.set(meals);
         this.activePlan.set(plan);
+        this.favoriteMeals.set(favorites);
     } catch (error) {
         console.error("Error loading initial data:", error);
     } finally {

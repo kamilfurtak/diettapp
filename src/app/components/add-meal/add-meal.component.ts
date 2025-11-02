@@ -6,8 +6,9 @@ import { MealService } from '../../services/meal.service';
 import { Meal, MealCategory } from '../../models/meal.model';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FavoriteProduct } from '../../models/favorite-product.model';
 
-type Status = 'idle' | 'capturing' | 'captured' | 'analyzing' | 'results' | 'error' | 'adding';
+type Status = 'idle' | 'capturing' | 'captured' | 'analyzing' | 'results' | 'error' | 'adding' | 'picking';
 
 @Component({
   selector: 'app-add-meal',
@@ -29,9 +30,10 @@ export class AddMealComponent implements OnDestroy {
   category = signal<MealCategory | null>(null);
   status = signal<Status>('idle');
   imageDataUrl = signal<string | null>(null);
-  analysisResult = signal<Omit<Meal, 'category'>[]>([]);
+  analysisResult = signal<Omit<Meal, 'category' | 'portion'>[]>([]);
   errorMessage = signal<string>('');
   mealForm: FormGroup;
+  favoriteMeals = this.mealService.favoriteMeals;
   
   private stream: MediaStream | null = null;
 
@@ -62,10 +64,25 @@ export class AddMealComponent implements OnDestroy {
       const newMeal: Meal = {
         ...this.mealForm.value,
         category: this.category(),
+        portion: 1,
       };
       this.mealService.addMeals([newMeal]);
       this.router.navigate(['/log']);
     }
+  }
+  
+  addFavoriteMeal(meal: FavoriteProduct) {
+    const newMeal: Meal = {
+      name: meal.name,
+      calories: meal.calories,
+      protein: meal.protein,
+      carbs: meal.carbs,
+      fat: meal.fat,
+      category: this.category()!,
+      portion: 1,
+    };
+    this.mealService.addMeals([newMeal]);
+    this.router.navigate(['/log']);
   }
 
   private async initializeCameraStream() {
@@ -148,7 +165,7 @@ export class AddMealComponent implements OnDestroy {
       const result = await this.geminiService.analyzeMealPhoto(base64Image);
       
       if(result && result.length > 0) {
-        this.analysisResult.set(result);
+        this.analysisResult.set(result as any);
         this.status.set('results');
       } else {
         this.errorMessage.set('Could not identify any food in the image. Please try again with a clearer picture.');
@@ -165,7 +182,7 @@ export class AddMealComponent implements OnDestroy {
     const result = this.analysisResult();
     const category = this.category();
     if (result.length > 0 && category) {
-      const mealsWithCategory: Meal[] = result.map(meal => ({ ...meal, category }));
+      const mealsWithCategory: Meal[] = result.map(meal => ({ ...meal, category, portion: 1 }));
       this.mealService.addMeals(mealsWithCategory);
       this.router.navigate(['/log']);
     }

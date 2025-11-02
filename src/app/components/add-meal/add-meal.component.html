@@ -7,14 +7,44 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
           <h2 class="text-2xl font-bold text-gray-100">Add to {{ category() }}</h2>
-          <p class="text-gray-400">Add a meal to your log manually.</p>
+          <p class="text-gray-400">Add a meal to your log manually or pick from your favorites.</p>
           <div class="w-full space-y-3 pt-2">
             <button (click)="status.set('adding')" class="w-full bg-lime-400 text-gray-900 font-bold py-3 px-4 rounded-lg hover:bg-lime-500 transition-colors flex items-center justify-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
-              Add Meal
+              Add New Meal
             </button>
+            <button (click)="status.set('picking')" class="w-full bg-gray-700 text-gray-200 font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition-colors flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345h5.584a.563.563 0 01.321.988l-4.202 3.095a.563.563 0 00-.182.557l1.528 5.4a.562.562 0 01-.82.622l-4.673-3.352a.563.563 0 00-.652 0l-4.673 3.352a.562.562 0 01-.82-.622l1.528-5.4a.563.563 0 00-.182-.557l-4.202-3.095a.563.563 0 01.321-.988h5.584a.563.563 0 00.475-.345L11.48 3.5z" />
+              </svg>
+              Pick from Favorites
+            </button>
+          </div>
+        </div>
+      }
+      @case('picking') {
+        <div class="space-y-4 text-left">
+          <h2 class="text-2xl font-bold text-gray-100 text-center">Pick a Favorite Meal</h2>
+          <div class="space-y-3 max-h-60 overflow-y-auto no-scrollbar">
+            @for (meal of favoriteMeals(); track meal.name) {
+              <div (click)="addFavoriteMeal(meal)" class="bg-gray-700 p-3 rounded-lg cursor-pointer hover:bg-gray-600">
+                <div class="flex justify-between items-center">
+                  <p class="font-semibold capitalize text-gray-100">{{ meal.name }}</p>
+                  <p class="font-bold text-lime-400">{{ meal.calories }} kcal</p>
+                </div>
+                <p class="text-sm text-gray-400">
+                  {{ meal.protein }}g P / {{ meal.carbs }}g C / {{ meal.fat }}g F
+                </p>
+              </div>
+            }
+            @if (favoriteMeals().length === 0) {
+              <p class="text-center text-gray-400 py-4">You don't have any favorite meals yet.</p>
+            }
+          </div>
+           <div class="flex gap-4">
+            <button type="button" (click)="status.set('idle')" class="w-full bg-gray-600 text-gray-200 font-bold py-3 px-4 rounded-lg hover:bg-gray-500 transition-colors">Cancel</button>
           </div>
         </div>
       }
