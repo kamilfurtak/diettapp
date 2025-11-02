@@ -1,47 +1,32 @@
-import { Injectable, signal } from '@angular/core';
-import { FirebaseApp, initializeApp } from 'firebase/app';
-import { Auth, getAuth, signInAnonymously, onAuthStateChanged, User } from 'firebase/auth';
+import { inject, Injectable, signal } from '@angular/core';
+import { Auth, onAuthStateChanged, signInAnonymously, User } from '@angular/fire/auth';
 import {
-  Firestore,
-  getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  deleteDoc,
   collection,
-  addDoc,
+  deleteDoc,
+  doc,
+  Firestore,
+  getDoc,
   getDocs,
+  onSnapshot,
   query,
-  onSnapshot
-} from 'firebase/firestore';
-import { firebaseConfig } from '../config/firebase.config';
+  setDoc, addDoc
+} from '@angular/fire/firestore';
 import { DietPlan } from '../models/diet-plan.model';
-import { Meal } from '../models/meal.model';
-import { FavoriteProduct } from '../models/favorite-product.model';
 import { FavoriteMeal } from '../models/favorite-meal.model';
+import { FavoriteProduct } from '../models/favorite-product.model';
+import { Meal } from '../models/meal.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  private app: FirebaseApp | null = null;
-  private auth: Auth | null = null;
-  private db: Firestore | null = null;
+  private auth: Auth = inject(Auth);
+  private db: Firestore = inject(Firestore);
 
   user = signal<User | null>(null);
   isReady = signal(false);
 
   constructor() {
-    if (firebaseConfig.apiKey === "YOUR_API_KEY") {
-        console.warn("Firebase configuration is not set. Persistence will not work. Please update src/config/firebase.config.ts");
-        this.isReady.set(true); // Set to ready to unblock app, but persistence will fail.
-        return;
-    }
-
-    this.app = initializeApp(firebaseConfig);
-    this.auth = getAuth(this.app);
-    this.db = getFirestore(this.app);
-
     onAuthStateChanged(this.auth, (user: any) => {
       if (user) {
         this.user.set(user);
@@ -60,11 +45,10 @@ export class FirebaseService {
   }
 
   syncMealsForToday(userId: string, onMealsUpdate: (meals: Meal[]) => void): () => void {
-    if (!this.db) return () => {};
     const dateStr = this.getTodaysDateString();
     const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
     const q = query(mealsColRef);
-    
+
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const meals: Meal[] = [];
       querySnapshot.forEach((doc) => {
@@ -78,7 +62,6 @@ export class FirebaseService {
   }
 
   async getMealsForToday(userId: string): Promise<Meal[]> {
-    if (!this.db) return [];
     const dateStr = this.getTodaysDateString();
     const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
     const q = query(mealsColRef);
@@ -92,7 +75,6 @@ export class FirebaseService {
   }
 
   async addMeals(userId: string, meals: Meal[]): Promise<void> {
-    if (!this.db) return;
     const dateStr = this.getTodaysDateString();
     const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
 
@@ -101,14 +83,12 @@ export class FirebaseService {
   }
 
   async removeMeal(userId: string, mealId: string): Promise<void> {
-    if (!this.db) return;
     const dateStr = this.getTodaysDateString();
     const mealDocRef = doc(this.db, 'users', userId, 'meals', dateStr, 'entries', mealId);
     await deleteDoc(mealDocRef);
   }
 
   async getDietPlan(userId: string): Promise<DietPlan | null> {
-    if (!this.db) return null;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');
     const docSnap = await getDoc(planDocRef);
     if (docSnap.exists()) {
@@ -119,19 +99,16 @@ export class FirebaseService {
   }
 
   async setDietPlan(userId: string, plan: DietPlan): Promise<void> {
-    if (!this.db) return;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');
     await setDoc(planDocRef, plan);
   }
 
   async removeDietPlan(userId: string): Promise<void> {
-    if (!this.db) return;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');
     await deleteDoc(planDocRef);
   }
 
   async getFavoriteProducts(userId: string): Promise<FavoriteProduct[]> {
-    if (!this.db) return [];
     const productsColRef = collection(this.db, 'users', userId, 'favoriteProducts');
     const q = query(productsColRef);
     const querySnapshot = await getDocs(q);
@@ -144,7 +121,6 @@ export class FirebaseService {
   }
 
   async getFavoriteMeals(userId: string): Promise<FavoriteMeal[]> {
-    if (!this.db) return [];
     const mealsColRef = collection(this.db, 'users', userId, 'favoriteMeals');
     const q = query(mealsColRef);
     const querySnapshot = await getDocs(q);
@@ -157,9 +133,6 @@ export class FirebaseService {
   }
 
   async addFavoriteProduct(userId: string, product: FavoriteProduct): Promise<FavoriteProduct> {
-    if (!this.db) {
-      throw new Error('Firestore not available');
-    }
     const productsColRef = collection(this.db, 'users', userId, 'favoriteProducts');
     const { id, ...productData } = product;
     const docRef = await addDoc(productsColRef, productData);
@@ -167,22 +140,17 @@ export class FirebaseService {
   }
 
   async addFavoriteMeal(userId: string, meal: Omit<FavoriteMeal, 'id'>): Promise<string> {
-    if (!this.db) {
-      throw new Error('Firestore not available');
-    }
     const mealsColRef = collection(this.db, 'users', userId, 'favoriteMeals');
     const docRef = await addDoc(mealsColRef, meal);
     return docRef.id;
   }
 
   async deleteFavoriteProduct(userId: string, productId: string): Promise<void> {
-    if (!this.db) return;
     const productDocRef = doc(this.db, 'users', userId, 'favoriteProducts', productId);
     await deleteDoc(productDocRef);
   }
 
   async removeFavoriteMeal(userId: string, mealId: string): Promise<void> {
-    if (!this.db) return;
     const mealDocRef = doc(this.db, 'users', userId, 'favoriteMeals', mealId);
     await deleteDoc(mealDocRef);
   }
