@@ -21,7 +21,8 @@
       (click)="markDay()" 
       class="w-full bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
       [class.opacity-50]="isDayMarked()"
-      [class.cursor-not-allowed]="isDayMarked()">
+      [class.cursor-not-allowed]="isDayMarked()"
+      data-cy="streak-mark-today-button">
       @if (isDayMarked()) {
         <span>You've marked your streak for today!</span>
       } @else {
@@ -34,7 +35,7 @@
     <p class="mt-4 text-center text-sm text-gray-500">Last marked on: {{ date | date:'medium' }}</p>
   }
 
-  <div class="mt-8">
+  <div class="mt-8" data-cy="streak-calendar">
     <app-calendar [markedDates]="markedDates()"></app-calendar>
   </div>
 </div>

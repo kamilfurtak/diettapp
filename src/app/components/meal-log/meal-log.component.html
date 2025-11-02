@@ -2,13 +2,17 @@
 <div class="bg-lime-300 text-gray-900 px-4 pt-2 pb-4 rounded-b-3xl shadow-lg sticky top-0 z-20">
   <div class="max-w-4xl mx-auto">
     <div class="flex justify-between items-center mb-4">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-      </svg>
+      <button data-cy="prev-day-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
       <h2 class="font-bold">Today</h2>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-      </svg>
+      <button data-cy="next-day-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
     </div>
     <div class="flex justify-around items-center">
       @for (day of daysOfWeek; track $index) {
@@ -29,30 +33,30 @@
   <!-- Active Diet Plan -->
   @if (mealService.isPlanActiveToday()) {
     @if(mealService.activePlan(); as plan) {
-      <div class="bg-gray-800 rounded-2xl p-4 border border-lime-400/50">
+      <div class="bg-gray-800 rounded-2xl p-4 border border-lime-400/50" data-cy="active-diet-plan">
         <div class="flex justify-between items-center mb-2">
           <div>
             <h3 class="text-lg font-bold text-lime-400">{{ plan.name }}</h3>
             <p class="text-sm text-gray-400">Active Diet Plan</p>
           </div>
-          <button (click)="editPlan()" class="bg-gray-700 text-gray-200 font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors text-sm">
+          <button (click)="editPlan()" class="bg-gray-700 text-gray-200 font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors text-sm" data-cy="edit-plan-button">
             Edit
           </button>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-sm bg-gray-700/50 p-2 rounded-lg">
-          <div>
+          <div data-cy="plan-calories">
             <p class="font-bold">{{ plan.calories }}</p>
             <p class="text-xs text-gray-400">kcal</p>
           </div>
-          <div>
+          <div data-cy="plan-protein">
             <p class="font-bold">{{ plan.protein }} g</p>
             <p class="text-xs text-gray-400">Protein</p>
           </div>
-          <div>
+          <div data-cy="plan-carbs">
             <p class="font-bold">{{ plan.carbs }} g</p>
             <p class="text-xs text-gray-400">Carbs</p>
           </div>
-          <div>
+          <div data-cy="plan-fat">
             <p class="font-bold">{{ plan.fat }} g</p>
             <p class="text-xs text-gray-400">Fat</p>
           </div>
@@ -63,25 +67,25 @@
 
   <!-- Meal Categories -->
   @for (category of mealCategories; track category.name) {
-    <div class="bg-gray-800 rounded-2xl p-4">
+    <div class="bg-gray-800 rounded-2xl p-4" [attr.data-cy]="'meal-category-' + (category.name | lowercase)">
       <div class="flex justify-between items-center mb-3">
         <div>
           <h3 class="text-xl font-bold">{{ category.name }}</h3>
           <p class="text-sm text-gray-400">{{ category.calories() }} kcal</p>
         </div>
         <div class="flex items-center gap-2">
-          <button class="text-gray-400 hover:text-white">
+          <button class="text-gray-400 hover:text-white" [attr.data-cy]="'meal-category-options-button-' + (category.name | lowercase)">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
             </svg>
           </button>
-          <button (click)="addMeal(category.name)" class="bg-lime-300 text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow">
+          <button (click)="addMeal(category.name)" class="bg-lime-300 text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow" [attr.data-cy]="'add-meal-camera-button-' + (category.name | lowercase)">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
             </svg>
           </button>
-          <button (click)="addMeal(category.name)" class="bg-lime-300 text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow">
+          <button (click)="addMeal(category.name)" class="bg-lime-300 text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow" [attr.data-cy]="'add-meal-button-' + (category.name | lowercase)">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
@@ -92,7 +96,7 @@
       <!-- Logged Meals in Category -->
       <div class="space-y-2">
         @for (meal of category.meals(); track $index) {
-          <div class="bg-gray-700/50 p-3 rounded-lg flex justify-between items-center">
+          <div class="bg-gray-700/50 p-3 rounded-lg flex justify-between items-center" [attr.data-cy]="'logged-meal-' + (meal.name | lowercase)">
             <div>
               <p class="font-semibold capitalize">{{ meal.name }}</p>
               <p class="text-xs text-gray-400">
@@ -119,7 +123,7 @@
 <div class="fixed bottom-16 left-0 right-0 bg-gray-800/80 backdrop-blur-sm border-t border-gray-700 p-3 z-20">
   <div class="max-w-4xl mx-auto grid grid-cols-4 gap-3">
     <!-- Calories -->
-    <div class="text-center">
+    <div class="text-center" data-cy="macro-summary-calories">
       <p class="text-xs font-bold">Kcal {{ mealService.totalCalories() }}</p>
       <div class="w-full bg-gray-600 rounded-full h-1.5 mt-1">
         <div class="bg-fuchsia-500 h-1.5 rounded-full" [style.width.%]="mealService.calorieProgress()"></div>
@@ -127,7 +131,7 @@
       <p class="text-xs text-gray-400">/ 2357</p>
     </div>
      <!-- Protein -->
-    <div class="text-center">
+    <div class="text-center" data-cy="macro-summary-protein">
       <p class="text-xs font-bold">Protein {{ mealService.totalProtein() }}</p>
       <div class="w-full bg-gray-600 rounded-full h-1.5 mt-1">
         <div class="bg-sky-400 h-1.5 rounded-full" [style.width.%]="mealService.proteinProgress()"></div>
@@ -135,7 +139,7 @@
       <p class="text-xs text-gray-400">/ 95 g</p>
     </div>
      <!-- Fat -->
-    <div class="text-center">
+    <div class="text-center" data-cy="macro-summary-fat">
       <p class="text-xs font-bold">Fat {{ mealService.totalFat() }}</p>
       <div class="w-full bg-gray-600 rounded-full h-1.5 mt-1">
         <div class="bg-amber-400 h-1.5 rounded-full" [style.width.%]="mealService.fatProgress()"></div>
@@ -143,7 +147,7 @@
       <p class="text-xs text-gray-400">/ 72 g</p>
     </div>
      <!-- Carbs -->
-    <div class="text-center">
+    <div class="text-center" data-cy="macro-summary-carbs">
       <p class="text-xs font-bold">Carbs {{ mealService.totalCarbs() }}</p>
       <div class="w-full bg-gray-600 rounded-full h-1.5 mt-1">
         <div class="bg-indigo-400 h-1.5 rounded-full" [style.width.%]="mealService.carbsProgress()"></div>

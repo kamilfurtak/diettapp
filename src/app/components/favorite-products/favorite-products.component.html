@@ -1,44 +1,44 @@
 <div class="favorite-products-container">
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-xl font-bold">Favorite Products</h2>
-    <button (click)="close.emit()" class="text-gray-400 hover:text-white">
+    <button (click)="close.emit()" class="text-gray-400 hover:text-white" data-cy="favorite-products-close-button">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
 
-  <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="space-y-4">
+  <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="space-y-4" data-cy="favorite-products-form">
     <div>
       <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
-      <input id="name" type="text" formControlName="name" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500">
+      <input id="name" type="text" formControlName="name" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500" data-cy="favorite-products-name-input">
     </div>
     <div>
       <label for="calories" class="block text-sm font-medium text-gray-400">Calories</label>
-      <input id="calories" type="number" formControlName="calories" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500">
+      <input id="calories" type="number" formControlName="calories" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500" data-cy="favorite-products-calories-input">
     </div>
     <div>
       <label for="protein" class="block text-sm font-medium text-gray-400">Protein</label>
-      <input id="protein" type="number" formControlName="protein" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500">
+      <input id="protein" type="number" formControlName="protein" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500" data-cy="favorite-products-protein-input">
     </div>
     <div>
       <label for="carbs" class="block text-sm font-medium text-gray-400">Carbs</label>
-      <input id="carbs" type="number" formControlName="carbs" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500">
+      <input id="carbs" type="number" formControlName="carbs" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500" data-cy="favorite-products-carbs-input">
     </div>
     <div>
       <label for="fat" class="block text-sm font-medium text-gray-400">Fat</label>
-      <input id="fat" type="number" formControlName="fat" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500">
+      <input id="fat" type="number" formControlName="fat" class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-lime-500" data-cy="favorite-products-fat-input">
     </div>
-    <button type="submit" [disabled]="productForm.invalid" class="w-full bg-lime-500 text-white font-bold py-2 px-4 rounded-md hover:bg-lime-600 disabled:bg-gray-600 disabled:cursor-not-allowed">Add Product</button>
+    <button type="submit" [disabled]="productForm.invalid" class="w-full bg-lime-500 text-white font-bold py-2 px-4 rounded-md hover:bg-lime-600 disabled:bg-gray-600 disabled:cursor-not-allowed" data-cy="favorite-products-add-button">Add Product</button>
   </form>
 
-  <ul class="product-list mt-6 space-y-2">
+  <ul class="product-list mt-6 space-y-2" data-cy="favorite-products-list">
     @for (product of favoriteProducts(); track product.id) {
-      <li class="bg-gray-800 p-3 rounded-md flex justify-between items-center">
+      <li class="bg-gray-800 p-3 rounded-md flex justify-between items-center" [attr.data-cy]="'favorite-product-' + (product.name | lowercase)">
         <span>{{ product.name }} - {{ product.calories }} kcal</span>
         <div class="flex gap-2">
-          <button (click)="selectProduct(product)" class="bg-lime-500 text-white px-3 py-1 rounded-md text-sm hover:bg-lime-600">Add to Meal</button>
-          <button (click)="deleteProduct(product.id!)" class="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-600">Delete</button>
+          <button (click)="selectProduct(product)" class="bg-lime-500 text-white px-3 py-1 rounded-md text-sm hover:bg-lime-600" [attr.data-cy]="'favorite-product-add-to-meal-button-' + (product.name | lowercase)">Add to Meal</button>
+          <button (click)="deleteProduct(product.id!)" class="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-600" [attr.data-cy]="'favorite-product-delete-button-' + (product.name | lowercase)">Delete</button>
         </div>
       </li>
     }

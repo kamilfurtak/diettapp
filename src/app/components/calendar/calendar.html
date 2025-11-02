@@ -1,12 +1,12 @@
-<div class="calendar-container">
+<div class="calendar-container" data-cy="calendar">
   <div class="calendar-header">
-    <button (click)="previousMonth()" class="nav-btn">&lt;</button>
+    <button (click)="previousMonth()" class="nav-btn" data-cy="calendar-prev-month-button">&lt;</button>
     <h2 class="month-year">{{ currentMonth + 1 | number }}/{{ currentYear }}</h2>
-    <button (click)="nextMonth()" class="nav-btn">&gt;</button>
+    <button (click)="nextMonth()" class="nav-btn" data-cy="calendar-next-month-button">&gt;</button>
   </div>
-  <div class="calendar-grid">
+  <div class="calendar-grid" data-cy="calendar-grid">
     @for (day of daysInMonth; track day) {
-      <div class="calendar-day" [class.streak]="isMarked(day)">
+      <div class="calendar-day" [class.streak]="isMarked(day)" [attr.data-cy]="'calendar-day-' + (day ? day.getDate() : '')">
         @if(day) {
           <span>{{ day.getDate() }}</span>
         }
