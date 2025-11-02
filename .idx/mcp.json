@@ -15,6 +15,10 @@
         "firebase-tools@latest",
         "experimental:mcp"
       ]
+    },
+    "nx-mcp": {
+      "command": "npx",
+      "args": ["@nrwl/nx-mcp@latest"]
     }
   }
 }
