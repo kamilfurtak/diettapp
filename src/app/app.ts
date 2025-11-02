@@ -4,16 +4,18 @@ import { AddMealComponent } from './components/add-meal/add-meal.component';
 import { MealCategory } from './models/meal.model';
 import { DietPlanComponent } from './components/diet-plan/diet-plan.component';
 import { MealService } from './services/meal.service';
+import { StreakComponent } from './streak/streak';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MealLogComponent, AddMealComponent, DietPlanComponent],
+  imports: [MealLogComponent, AddMealComponent, DietPlanComponent, StreakComponent, RouterModule],
 })
 export class App {
   mealService = inject(MealService);
-  view = signal<'log' | 'add' | 'plan'>('log');
+  view = signal<'log' | 'add' | 'plan' | 'streak'>('log');
   selectedCategory = signal<MealCategory | null>(null);
 
   showAddMealView(category: MealCategory) {
@@ -28,5 +30,9 @@ export class App {
 
   showPlanView() {
     this.view.set('plan');
+  }
+
+  showStreakView() {
+    this.view.set('streak');
   }
 }
