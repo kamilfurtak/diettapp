@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class App {
   mealService = inject(MealService);
-  view = signal<'log' | 'add' | 'plan' | 'streak'>('log');
+  view = signal<'log' | 'add' | 'plan' | 'streak'>('streak');
   selectedCategory = signal<MealCategory | null>(null);
 
   showAddMealView(category: MealCategory) {

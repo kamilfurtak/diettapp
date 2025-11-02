@@ -42,7 +42,14 @@
   </main>
 
   <footer class="fixed bottom-0 left-0 right-0 bg-gray-800 border-t border-gray-700 h-16 flex items-center justify-around z-30">
-      <button (click)="showLogView()" [class.text-lime-400]="view() === 'log'" [class.text-gray-400]="view() !== 'log'" class="flex flex-col items-center justify-center hover:text-lime-400 transition-colors w-1/5">
+      <button (click)="showStreakView()" [class.text-lime-400]="view() === 'streak'" [class.text-gray-400]="view() !== 'streak'" class="flex flex-col items-center justify-center hover:text-lime-400 transition-colors w-1/5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-2xl" width="1em" height="1em" viewBox="0 0 512 512">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96z"/>
+        </svg>
+        <span class="text-xs">Streak</span>
+    </button>
+    <button (click)="showLogView()" [class.text-lime-400]="view() === 'log'" [class.text-gray-400]="view() !== 'log'" class="flex flex-col items-center justify-center hover:text-lime-400 transition-colors w-1/5">
         <svg xmlns="http://www.w3.org/2000/svg" class="text-2xl" width="1em" height="1em" viewBox="0 0 512 512">
           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
                 d="M57.49 47.74l368.43 368.43a37.28 37.28 0 010 52.72h0a37.29 37.29 0 01-52.72 0l-90-91.55A32 32 0 01274 354.91v-5.53a32 32 0 00-9.52-22.78l-11.62-10.73a32 32 0 00-29.8-7.44h0a48.53 48.53 0 01-46.56-12.63l-85.43-85.44C40.39 159.68 21.74 83.15 57.49 47.74z"/>
@@ -51,13 +58,6 @@
         </svg>
         <span class="text-xs font-medium">Log</span>
       </button>
-      <button (click)="showStreakView()" [class.text-lime-400]="view() === 'streak'" [class.text-gray-400]="view() !== 'streak'" class="flex flex-col items-center justify-center hover:text-lime-400 transition-colors w-1/5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="text-2xl" width="1em" height="1em" viewBox="0 0 512 512">
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96z"/>
-        </svg>
-        <span class="text-xs">Streak</span>
-    </button>
       <button (click)="showAddMealView('Snacks')" class="flex flex-col items-center justify-center text-gray-400 w-1/5">
         <svg xmlns="http://www.w3.org/2000/svg" class="text-6xl text-lime-400 -mt-8 bg-gray-800 p-1 rounded-full"
              width="1em" height="1em" viewBox="0 0 512 512">
