@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  background-color: #1f2937;
+  background-color: #1a202c;
   padding: 20px;
   border-radius: 8px;
 }
@@ -14,18 +14,17 @@
   margin-bottom: 20px;
 }
 
-.month-year {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #a5b4fc;
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  color: #a0aec0;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.nav-btn {
-  background: none;
-  border: none;
-  color: #a5b4fc;
-  font-size: 1.5rem;
-  cursor: pointer;
+.month-year {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .calendar-grid {
@@ -39,12 +38,15 @@
   justify-content: center;
   align-items: center;
   height: 40px;
-  background-color: #374151;
-  color: #fff;
   border-radius: 50%;
+  color: #a0aec0;
+}
+
+.calendar-day span {
+  pointer-events: none;
 }
 
 .calendar-day.streak {
-  background-color: #84cc16; /* lime-500 */
-  color: #1f2937;
+  background-color: #48bb78;
+  color: #fff;
 }

@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class CalendarComponent {
+  markedDates = input<Date[]>([]);
+
   currentDate = new Date();
   currentMonth = this.currentDate.getMonth();
   currentYear = this.currentDate.getFullYear();
@@ -32,6 +34,17 @@ export class CalendarComponent {
     for (let i = 1; i <= lastDayOfMonth.getDate(); i++) {
       this.daysInMonth.push(new Date(this.currentYear, this.currentMonth, i));
     }
+  }
+
+  isMarked(day: Date | null): boolean {
+    if (!day) {
+      return false;
+    }
+    return this.markedDates().some(markedDate =>
+      markedDate.getDate() === day.getDate() &&
+      markedDate.getMonth() === day.getMonth() &&
+      markedDate.getFullYear() === day.getFullYear()
+    );
   }
 
   previousMonth() {

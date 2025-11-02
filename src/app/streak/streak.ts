@@ -16,6 +16,7 @@ export class StreakComponent {
   streak = this.streakService.getStreak();
   longestStreak = this.streakService.getLongestStreak();
   lastMarkedDate = this.streakService.getLastMarkedDate();
+  markedDates = this.streakService.getMarkedDates();
 
   isDayMarked = computed(() => {
     const lastDate = this.lastMarkedDate();
