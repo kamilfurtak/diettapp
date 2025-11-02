@@ -4,13 +4,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GeminiService } from '../../services/gemini.service';
 import { MealService } from '../../services/meal.service';
 import { Meal, MealCategory } from '../../models/meal.model';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-type Status = 'idle' | 'capturing' | 'captured' | 'analyzing' | 'results' | 'error';
+type Status = 'idle' | 'capturing' | 'captured' | 'analyzing' | 'results' | 'error' | 'adding';
 
 @Component({
   selector: 'app-add-meal',
   templateUrl: './add-meal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule] 
 })
 export class AddMealComponent implements OnDestroy {
   @ViewChild('video') video?: ElementRef<HTMLVideoElement>;
@@ -21,16 +24,26 @@ export class AddMealComponent implements OnDestroy {
   private router = inject(Router);
   private geminiService = inject(GeminiService);
   private mealService = inject(MealService);
+  private fb = inject(FormBuilder);
 
   category = signal<MealCategory | null>(null);
   status = signal<Status>('idle');
   imageDataUrl = signal<string | null>(null);
   analysisResult = signal<Omit<Meal, 'category'>[]>([]);
   errorMessage = signal<string>('');
+  mealForm: FormGroup;
   
   private stream: MediaStream | null = null;
 
   constructor() {
+    this.mealForm = this.fb.group({
+      name: ['', Validators.required],
+      calories: ['', [Validators.required, Validators.min(0)]],
+      protein: ['', [Validators.required, Validators.min(0)]],
+      carbs: ['', [Validators.required, Validators.min(0)]],
+      fat: ['', [Validators.required, Validators.min(0)]],
+    });
+
     this.route.params.subscribe(params => {
       this.category.set(params['category'] as MealCategory);
     });
@@ -42,6 +55,17 @@ export class AddMealComponent implements OnDestroy {
         });
       }
     });
+  }
+
+  addMeal() {
+    if (this.mealForm.valid) {
+      const newMeal: Meal = {
+        ...this.mealForm.value,
+        category: this.category(),
+      };
+      this.mealService.addMeals([newMeal]);
+      this.router.navigate(['/log']);
+    }
   }
 
   private async initializeCameraStream() {

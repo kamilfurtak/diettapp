@@ -7,17 +7,22 @@ import { Meal } from '../models/meal.model';
   providedIn: 'root',
 })
 export class GeminiService {
-  private ai: GoogleGenAI;
+  private ai: GoogleGenAI | null = null;
 
   constructor() {
     const apiKey = import.meta.env.NG_APP_GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error('NG_APP_GEMINI_API_KEY must be set in your .env file.');
+    if (apiKey) {
+      this.ai = new GoogleGenAI({ apiKey });
+    } else {
+      console.warn('NG_APP_GEMINI_API_KEY is not set. AI features will be disabled.');
     }
-    this.ai = new GoogleGenAI({ apiKey });
   }
 
   async analyzeMealPhoto(base64Image: string): Promise<Meal[]> {
+    if (!this.ai) {
+      throw new Error('NG_APP_GEMINI_API_KEY is not configured. Please set it in your environment to use AI features.');
+    }
+
     const prompt = `Analyze the food items in this image. For each item, estimate its nutritional content. Provide the response as a JSON array where each object represents a food item and has the following properties: 'name' (string), 'calories' (number), 'protein' (number, in grams), 'carbs' (number, in grams), and 'fat' (number, in grams). If you cannot identify any food, return an empty array.`;
 
     const imagePart = {
