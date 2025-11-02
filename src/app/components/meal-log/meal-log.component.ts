@@ -35,7 +35,7 @@ export class MealLogComponent {
   );
 
   addMeal(category: MealCategory) {
-    this.router.navigate(['/add-meal', { category }]);
+    this.router.navigate(['/add-meal'], { queryParams: { category } });
   }
 
   addMealToFavorites(meal: Meal) {

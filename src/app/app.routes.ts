@@ -8,8 +8,8 @@ import { FavoriteMealsComponent } from './components/favorite-meals/favorite-mea
 export const routes: Routes = [
     { path: 'streak', component: StreakComponent },
     { path: 'log', component: MealLogComponent },
-    { path: 'add/:category', component: AddMealComponent },
+    { path: 'add-meal', component: AddMealComponent },
     { path: 'plan', component: DietPlanComponent },
     { path: 'favorites', component: FavoriteMealsComponent },
-    { path: '', redirectTo: '/streak', pathMatch: 'full' },
+    { path: '', redirectTo: '/log', pathMatch: 'full' },
 ];
