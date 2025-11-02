@@ -18,7 +18,7 @@
     },
     "nx-mcp": {
       "command": "npx",
-      "args": ["@nrwl/nx-mcp@latest"]
+      "args": ["nx-mcp@latest"]
     }
   }
 }
