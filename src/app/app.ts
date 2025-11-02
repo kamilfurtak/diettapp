@@ -24,7 +24,6 @@ export class App {
   }
 
   showLogView() {
-    this.selectedCategory.set(null);
     this.view.set('log');
   }
 
