@@ -1,9 +1,10 @@
 
-import { Component, ChangeDetectionStrategy, inject, output, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MealService } from '../../services/meal.service';
 import { DietPlan } from '../../models/diet-plan.model';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-diet-plan',
@@ -13,12 +14,8 @@ import { CommonModule } from '@angular/common';
 })
 export class DietPlanComponent implements OnInit {
    mealService = inject(MealService);
-  // FIX: Explicitly typing `fb` with FormBuilder resolves the type inference issue
-  // where the compiler was unable to determine the type from `inject(FormBuilder)`.
+   router = inject(Router);
   private fb: FormBuilder = inject(FormBuilder);
-
-  // FIX: Use output() function instead of @Output decorator
-  close = output<void>();
 
   planForm!: FormGroup;
 
@@ -46,11 +43,15 @@ export class DietPlanComponent implements OnInit {
     }
     const plan: DietPlan = this.planForm.value;
     this.mealService.setDietPlan(plan);
-    this.close.emit();
+    this.router.navigate(['/log']);
   }
 
   removePlan() {
     this.mealService.removeDietPlan();
-    this.close.emit();
+    this.router.navigate(['/log']);
+  }
+
+  close() {
+    this.router.navigate(['/log']);
   }
 }

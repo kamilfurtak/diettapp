@@ -16,14 +16,15 @@ import {
 import { firebaseConfig } from '../config/firebase.config';
 import { DietPlan } from '../models/diet-plan.model';
 import { Meal } from '../models/meal.model';
+import { FavoriteProduct } from '../models/favorite-product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  private app: FirebaseApp;
-  private auth: Auth;
-  private db: Firestore;
+  private app: FirebaseApp | null = null;
+  private auth: Auth | null = null;
+  private db: Firestore | null = null;
 
   user = signal<User | null>(null);
   isReady = signal(false);
@@ -44,7 +45,7 @@ export class FirebaseService {
         this.user.set(user);
         this.isReady.set(true);
       } else {
-        signInAnonymously(this.auth).catch((error: any) => {
+        signInAnonymously(this.auth!).catch((error: any) => {
           console.error('Anonymous sign-in failed', error);
           this.isReady.set(true); // Unblock app even if auth fails
         });
@@ -57,18 +58,21 @@ export class FirebaseService {
   }
 
   async getMealsForToday(userId: string): Promise<Meal[]> {
+    if (!this.db) return [];
     const dateStr = this.getTodaysDateString();
     const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
     const q = query(mealsColRef);
     const querySnapshot = await getDocs(q);
     const meals: Meal[] = [];
     querySnapshot.forEach((doc) => {
-      meals.push(doc.data() as Meal);
+      const data = doc.data() as Omit<Meal, 'id'>;
+      meals.push({ id: doc.id, ...data });
     });
     return meals;
   }
 
   async addMeals(userId: string, meals: Meal[]): Promise<void> {
+    if (!this.db) return;
     const dateStr = this.getTodaysDateString();
     const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
 
@@ -77,6 +81,7 @@ export class FirebaseService {
   }
 
   async getDietPlan(userId: string): Promise<DietPlan | null> {
+    if (!this.db) return null;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');
     const docSnap = await getDoc(planDocRef);
     if (docSnap.exists()) {
@@ -87,12 +92,43 @@ export class FirebaseService {
   }
 
   async setDietPlan(userId: string, plan: DietPlan): Promise<void> {
+    if (!this.db) return;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');
     await setDoc(planDocRef, plan);
   }
 
   async removeDietPlan(userId: string): Promise<void> {
+    if (!this.db) return;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');
     await deleteDoc(planDocRef);
+  }
+
+  async getFavoriteProducts(userId: string): Promise<FavoriteProduct[]> {
+    if (!this.db) return [];
+    const productsColRef = collection(this.db, 'users', userId, 'favoriteProducts');
+    const q = query(productsColRef);
+    const querySnapshot = await getDocs(q);
+    const products: FavoriteProduct[] = [];
+    querySnapshot.forEach((doc) => {
+      const data = doc.data() as Omit<FavoriteProduct, 'id'>;
+      products.push({ id: doc.id, ...data });
+    });
+    return products;
+  }
+
+  async addFavoriteProduct(userId: string, product: FavoriteProduct): Promise<FavoriteProduct> {
+    if (!this.db) {
+      throw new Error('Firestore not available');
+    }
+    const productsColRef = collection(this.db, 'users', userId, 'favoriteProducts');
+    const { id, ...productData } = product;
+    const docRef = await addDoc(productsColRef, productData);
+    return { id: docRef.id, ...productData } as FavoriteProduct;
+  }
+
+  async deleteFavoriteProduct(userId: string, productId: string): Promise<void> {
+    if (!this.db) return;
+    const productDocRef = doc(this.db, 'users', userId, 'favoriteProducts', productId);
+    await deleteDoc(productDocRef);
   }
 }

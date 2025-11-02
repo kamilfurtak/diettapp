@@ -1,0 +1,15 @@
+.favorite-products-container {
+  background-color: #1f2937; /* bg-gray-800 */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  color: #f3f4f6; /* text-gray-100 */
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #d1d5db; /* text-gray-300 */
+  font-weight: 500;
+}

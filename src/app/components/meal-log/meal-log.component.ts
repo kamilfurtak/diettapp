@@ -3,6 +3,7 @@ import { Component, ChangeDetectionStrategy, inject, output } from '@angular/cor
 import { MealService } from '../../services/meal.service';
 import { Meal, MealCategory } from '../../models/meal.model';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface MealCategoryInfo {
   name: MealCategory;
@@ -18,9 +19,8 @@ interface MealCategoryInfo {
 })
 export class MealLogComponent {
   mealService = inject(MealService);
+  router = inject(Router);
 
-  // FIX: Use output() function instead of @Output decorator
-  addMealRequest = output<MealCategory>();
   editPlanRequest = output<void>();
 
   mealCategories: MealCategoryInfo[];
@@ -37,7 +37,7 @@ export class MealLogComponent {
   }
 
   addMeal(category: MealCategory) {
-    this.addMealRequest.emit(category);
+    this.router.navigate(['/add', category]);
   }
 
   editPlan() {

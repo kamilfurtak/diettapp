@@ -10,9 +10,9 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    const apiKey = import.meta.env['VITE_GEMINI_API_KEY'];
+    const apiKey = import.meta.env.NG_APP_GEMINI_API_KEY;
     if (!apiKey) {
-      throw new Error('VITE_GEMINI_API_KEY must be set in your .env file.');
+      throw new Error('NG_APP_GEMINI_API_KEY must be set in your .env file.');
     }
     this.ai = new GoogleGenAI({ apiKey });
   }

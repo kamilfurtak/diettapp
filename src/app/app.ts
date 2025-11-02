@@ -1,37 +1,47 @@
+
 import { Component, ChangeDetectionStrategy, signal, inject } from '@angular/core';
-import { MealLogComponent } from './components/meal-log/meal-log.component';
-import { AddMealComponent } from './components/add-meal/add-meal.component';
-import { MealCategory } from './models/meal.model';
-import { DietPlanComponent } from './components/diet-plan/diet-plan.component';
+import { Meal, MealCategory } from './models/meal.model';
 import { MealService } from './services/meal.service';
-import { StreakComponent } from './streak/streak';
-import { RouterModule } from '@angular/router';
+import { FavoriteProductsComponent } from './components/favorite-products/favorite-products.component';
+import { FavoriteProduct } from './models/favorite-product.model';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
+  styleUrls: ['./app.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MealLogComponent, AddMealComponent, DietPlanComponent, StreakComponent, RouterModule],
+  imports: [
+    FavoriteProductsComponent, 
+    RouterModule
+  ],
 })
 export class App {
   mealService = inject(MealService);
-  view = signal<'log' | 'add' | 'plan' | 'streak'>('streak');
+  router = inject(Router);
+  showFavorites = signal(false);
   selectedCategory = signal<MealCategory | null>(null);
 
-  showAddMealView(category: MealCategory) {
-    this.selectedCategory.set(category);
-    this.view.set('add');
+
+  toggleFavorites() {
+    this.showFavorites.update(value => !value);
   }
 
-  showLogView() {
-    this.view.set('log');
-  }
-
-  showPlanView() {
-    this.view.set('plan');
-  }
-
-  showStreakView() {
-    this.view.set('streak');
+  addFavoriteProductToMeal(product: FavoriteProduct) {
+    const category = this.selectedCategory();
+    if (category) {
+      const meal: Meal = {
+        name: product.name,
+        calories: product.calories,
+        protein: product.protein,
+        carbs: product.carbs,
+        fat: product.fat,
+        category: category,
+        portion: 1
+      };
+      this.mealService.addMeals([meal]);
+      this.toggleFavorites();
+      this.router.navigate(['/log']);
+    }
   }
 }

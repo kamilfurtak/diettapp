@@ -21,9 +21,11 @@
     "strictInputAccessModifiers": true,
     "typeCheckHostBindings": true,
     "strictTemplates": true,
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": false
   },
-  "files": [],
+  "files": [
+    "src/types.d.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"

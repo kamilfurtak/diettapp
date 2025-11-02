@@ -1,5 +1,6 @@
 
-import { Component, ChangeDetectionStrategy, signal, ViewChild, ElementRef, OnDestroy, output, inject, effect, afterNextRender, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, ViewChild, ElementRef, OnDestroy, output, inject, effect, afterNextRender } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GeminiService } from '../../services/gemini.service';
 import { MealService } from '../../services/meal.service';
 import { Meal, MealCategory } from '../../models/meal.model';
@@ -16,15 +17,12 @@ export class AddMealComponent implements OnDestroy {
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
   
-  // FIX: Use output() function instead of @Output decorator
-  mealAdded = output<void>();
-  close = output<void>();
-
-  category = input.required<MealCategory>();
-
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private geminiService = inject(GeminiService);
   private mealService = inject(MealService);
 
+  category = signal<MealCategory | null>(null);
   status = signal<Status>('idle');
   imageDataUrl = signal<string | null>(null);
   analysisResult = signal<Omit<Meal, 'category'>[]>([]);
@@ -33,6 +31,10 @@ export class AddMealComponent implements OnDestroy {
   private stream: MediaStream | null = null;
 
   constructor() {
+    this.route.params.subscribe(params => {
+      this.category.set(params['category'] as MealCategory);
+    });
+
     effect(() => {
       if (this.status() === 'capturing') {
         afterNextRender(() => {
@@ -137,12 +139,16 @@ export class AddMealComponent implements OnDestroy {
   
   addMealsToLog() {
     const result = this.analysisResult();
-    if (result.length > 0) {
-      const category = this.category();
+    const category = this.category();
+    if (result.length > 0 && category) {
       const mealsWithCategory: Meal[] = result.map(meal => ({ ...meal, category }));
       this.mealService.addMeals(mealsWithCategory);
-      this.mealAdded.emit();
+      this.router.navigate(['/log']);
     }
+  }
+
+  close() {
+    this.router.navigate(['/log']);
   }
 
   stopCamera() {
