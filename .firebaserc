@@ -1,5 +1,7 @@
 {
-  "projects": {},
+  "projects": {
+    "default": "diettapp-77954408-be79f"
+  },
   "targets": {},
   "etags": {}
 }
