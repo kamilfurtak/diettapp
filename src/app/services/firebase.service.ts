@@ -11,7 +11,8 @@ import {
   collection,
   addDoc,
   getDocs,
-  query
+  query,
+  onSnapshot
 } from 'firebase/firestore';
 import { firebaseConfig } from '../config/firebase.config';
 import { DietPlan } from '../models/diet-plan.model';
@@ -56,6 +57,24 @@ export class FirebaseService {
 
   private getTodaysDateString(): string {
     return new Date().toISOString().split('T')[0];
+  }
+
+  syncMealsForToday(userId: string, onMealsUpdate: (meals: Meal[]) => void): () => void {
+    if (!this.db) return () => {};
+    const dateStr = this.getTodaysDateString();
+    const mealsColRef = collection(this.db, 'users', userId, 'meals', dateStr, 'entries');
+    const q = query(mealsColRef);
+    
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const meals: Meal[] = [];
+      querySnapshot.forEach((doc) => {
+        const data = doc.data() as Omit<Meal, 'id'>;
+        meals.push({ id: doc.id, ...data });
+      });
+      onMealsUpdate(meals);
+    });
+
+    return unsubscribe;
   }
 
   async getMealsForToday(userId: string): Promise<Meal[]> {

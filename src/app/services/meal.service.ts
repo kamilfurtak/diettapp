@@ -1,13 +1,15 @@
-import { Injectable, signal, computed, WritableSignal, Signal, inject, effect } from '@angular/core';
+import { Injectable, signal, computed, WritableSignal, Signal, inject, effect, OnDestroy } from '@angular/core';
 import { Meal, MealCategory } from '../models/meal.model';
 import { DietPlan } from '../models/diet-plan.model';
 import { FirebaseService } from './firebase.service';
 import { FavoriteMeal } from '../models/favorite-meal.model';
+import { Unsubscribe } from 'firebase/firestore';
+
 
 @Injectable({
   providedIn: 'root',
 })
-export class MealService {
+export class MealService implements OnDestroy {
   private firebaseService = inject(FirebaseService);
 
   private readonly CALORIE_GOAL = 2357;
@@ -19,6 +21,8 @@ export class MealService {
   meals: WritableSignal<Meal[]> = signal([]);
   activePlan = signal<DietPlan | null>(null);
   favoriteMeals: WritableSignal<FavoriteMeal[]> = signal([]);
+
+  private mealsUnsubscribe: Unsubscribe | null = null;
 
   readonly isPlanActiveToday: Signal<boolean>;
 
@@ -45,7 +49,7 @@ export class MealService {
   constructor() {
     effect(() => {
         if (this.firebaseService.isReady()) {
-            this.loadInitialData();
+            this.syncData();
         }
     });
 
@@ -108,32 +112,35 @@ export class MealService {
     this.snacksCalories = sumCaloriesByCategory('Snacks');
   }
 
-  private async loadInitialData() {
+  ngOnDestroy() {
+    if (this.mealsUnsubscribe) {
+      this.mealsUnsubscribe();
+    }
+  }
+
+  private syncData() {
     const uid = this.firebaseService.user()?.uid;
     if (!uid) {
         this.loading.set(false);
         return;
     }
     
-    try {
-        const [meals, plan, favorites] = await Promise.all([
-            this.firebaseService.getMealsForToday(uid),
-            this.firebaseService.getDietPlan(uid),
-            this.firebaseService.getFavoriteMeals(uid)
-        ]);
-
-        this.meals.set(meals);
-        this.activePlan.set(plan);
-        this.favoriteMeals.set(favorites);
-    } catch (error) {
-        console.error("Error loading initial data:", error);
-    } finally {
-        this.loading.set(false);
+    this.loading.set(true);
+    if (this.mealsUnsubscribe) {
+      this.mealsUnsubscribe();
     }
-  }
 
+    this.mealsUnsubscribe = this.firebaseService.syncMealsForToday(uid, (meals) => {
+        this.meals.set(meals);
+        this.loading.set(false);
+    });
+    
+    // Load non-realtime data that doesn't need to be in sync constantly
+    this.firebaseService.getDietPlan(uid).then(plan => this.activePlan.set(plan));
+    this.firebaseService.getFavoriteMeals(uid).then(favorites => this.favoriteMeals.set(favorites));
+  }
+  
   addMeals(newMeals: Meal[]) {
-    this.meals.update((currentMeals) => [...currentMeals, ...newMeals]);
     const uid = this.firebaseService.user()?.uid;
     if (uid) {
         this.firebaseService.addMeals(uid, newMeals);
@@ -144,16 +151,10 @@ export class MealService {
     const uid = this.firebaseService.user()?.uid;
     if (!uid) return;
 
-    const mealToRemove = this.meals().find(m => m.id === mealId);
-    if (!mealToRemove) return;
-
-    this.meals.update(meals => meals.filter(m => m.id !== mealId));
-
     try {
       await this.firebaseService.removeMeal(uid, mealId);
     } catch (error) {
       console.error('Failed to remove meal from database:', error);
-      this.meals.update(meals => [...meals, mealToRemove]);
     }
   }
 
