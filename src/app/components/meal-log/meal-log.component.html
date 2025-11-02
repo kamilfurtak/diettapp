@@ -91,7 +91,7 @@
 
       <!-- Logged Meals in Category -->
       <div class="space-y-2">
-        @for (meal of category.meals(); track meal.name + $index) {
+        @for (meal of category.meals(); track $index) {
           <div class="bg-gray-700/50 p-3 rounded-lg flex justify-between items-center">
             <div>
               <p class="font-semibold capitalize">{{ meal.name }}</p>
