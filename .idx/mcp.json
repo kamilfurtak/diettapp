@@ -19,6 +19,12 @@
     "nx-mcp": {
       "command": "npx",
       "args": ["nx-mcp@latest"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ]
     }
   }
 }
