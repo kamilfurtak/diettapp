@@ -1,0 +1,1 @@
+- always use nx build to build app

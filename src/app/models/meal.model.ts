@@ -9,4 +9,5 @@ export interface Meal {
   fat: number;
   category: MealCategory;
   portion: number;
+  date: string;
 }

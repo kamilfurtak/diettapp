@@ -1,47 +1,36 @@
-# Blueprint
+# Diet Tracker Application
 
 ## Overview
 
-This document outlines the plan for creating a comprehensive E2E test suite for the Diet App using Cypress. The goal is to ensure the application's stability, functionality, and reliability.
+A simple application to track your daily meals and calorie intake. It helps users monitor their diet, maintain a food log, and provides a view of their meal history.
 
-## Style, Design, and Features
+## Implemented Features
 
-The application is a modern, single-page application built with Angular. It features a clean, user-friendly interface with the following key components:
+### Core Functionality
 
-*   **Calendar:** Allows users to navigate between different days.
-*   **Meal Log:** Displays the meals for the selected day.
-*   **Add Meal:** A form for adding new meals to the log.
-*   **Favorite Products:** A list of the user's favorite products for quick-add.
-*   **Diet Plan:** Shows the user's daily caloric and macronutrient goals.
-*   **Streak:** Tracks the user's consistency in meeting their diet goals.
+*   **Meal Logging:** Users can log their meals for the day, categorized by breakfast, lunch, dinner, and snacks.
+*   **Calorie Calculation:** The application automatically calculates and displays the total calorie intake for the day based on the logged meals.
+*   **Streak Counter:** A streak counter is displayed to motivate users to log their meals consistently.
+*   **Favorite Meals:** Users can add meals to a "Favorites" list for quick access and logging.
 
-## E2E Test Plan
+### User Interface
 
-### Phase 1: Basic Smoke Tests
+*   **Modern Design:** The application features a clean and modern user interface with a dark theme.
+*   **Navigation:** A bottom navigation bar provides easy access to different sections of the app, including Streak, Meal Log, and Diet Plan.
+*   **Meal Cards:** Logged meals are displayed as cards, showing the meal's name, calorie count, and a relevant icon.
+*   **Favorites:** A dedicated "Favorites" page allows users to view their favorite meals and add them to their daily log.
 
-1.  **Application Loads:** Verify that the application loads successfully without any console errors.
-2.  **Initial State:** Check that all the main components (Calendar, Meal Log, etc.) are present on the initial screen.
+## Current Task: Add to Favorites Functionality
 
-### Phase 2: Core Functionality
+### Plan
 
-1.  **Add a Meal:**
-    *   Open the "Add Meal" form.
-    *   Fill in the form with valid data.
-    *   Submit the form.
-    *   Verify that the new meal appears in the "Meal Log".
-    *   Verify that the "Diet Plan" totals are updated correctly.
-2.  **Navigate Calendar:**
-    *   Click the "next" and "previous" buttons on the calendar.
-    *   Verify that the "Meal Log" updates to show the meals for the selected day.
-3.  **Use Favorite Products:**
-    *   Click on a product in the "Favorite Products" list.
-    *   Verify that the product is added to the "Add Meal" form.
-
-### Phase 3: Validation and Edge Cases
-
-1.  **Empty Meal Form:**
-    *   Try to submit the "Add Meal" form with empty fields.
-    *   Verify that appropriate validation messages are displayed.
-2.  **Future Dates:**
-    *   Navigate to a future date in the calendar.
-    *   Verify that the "Add Meal" functionality is disabled.
+1.  **Add Star Icon:**
+    *   Add a star icon button to each meal card in the daily meal log.
+2.  **Implement `addFavoriteMeal` Method:**
+    *   Create a new `FavoriteMeal` model.
+    *   Add an `addFavoriteMeal` method to the `FirebaseService` to save favorite meals to Firestore.
+    *   Add an `addFavoriteMeal` method to the `MealService` to interact with the `FirebaseService`.
+    *   Add an `addMealToFavorites` method to the `MealLogComponent` to handle the user's action.
+3.  **Update `FavoriteMealsComponent`:**
+    *   Update the component to display the list of favorite meals.
+    *   Add a button to each favorite meal to add it to the current day's meal log.

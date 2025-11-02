@@ -2,7 +2,7 @@ import { Injectable, signal, computed, WritableSignal, Signal, inject, effect } 
 import { Meal, MealCategory } from '../models/meal.model';
 import { DietPlan } from '../models/diet-plan.model';
 import { FirebaseService } from './firebase.service';
-import { FavoriteProduct } from '../models/favorite-product.model';
+import { FavoriteMeal } from '../models/favorite-meal.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class MealService {
   loading = signal<boolean>(true);
   meals: WritableSignal<Meal[]> = signal([]);
   activePlan = signal<DietPlan | null>(null);
-  favoriteMeals: WritableSignal<FavoriteProduct[]> = signal([]);
+  favoriteMeals: WritableSignal<FavoriteMeal[]> = signal([]);
 
   readonly isPlanActiveToday: Signal<boolean>;
 
@@ -119,7 +119,7 @@ export class MealService {
         const [meals, plan, favorites] = await Promise.all([
             this.firebaseService.getMealsForToday(uid),
             this.firebaseService.getDietPlan(uid),
-            this.firebaseService.getFavoriteProducts(uid)
+            this.firebaseService.getFavoriteMeals(uid)
         ]);
 
         this.meals.set(meals);
@@ -137,6 +137,32 @@ export class MealService {
     const uid = this.firebaseService.user()?.uid;
     if (uid) {
         this.firebaseService.addMeals(uid, newMeals);
+    }
+  }
+
+  async addFavoriteMeal(meal: Meal) {
+    const uid = this.firebaseService.user()?.uid;
+    if (!uid) return;
+
+    const currentFavorites = this.favoriteMeals();
+    const existingFavorite = currentFavorites.find(fav => fav.name === meal.name);
+
+    if (existingFavorite) {
+      this.favoriteMeals.update(favorites => favorites.filter(fav => fav.id !== existingFavorite.id));
+      await this.firebaseService.removeFavoriteMeal(uid, existingFavorite.id!);
+    } else {
+      const newFavorite: Omit<FavoriteMeal, 'id'> = {
+        name: meal.name,
+        calories: meal.calories,
+        protein: meal.protein,
+        carbs: meal.carbs,
+        fat: meal.fat,
+        category: meal.category,
+      };
+      const addedMealId = await this.firebaseService.addFavoriteMeal(uid, newFavorite);
+      if (addedMealId) {
+        this.favoriteMeals.update(favorites => [...favorites, { ...newFavorite, id: addedMealId }]);
+      }
     }
   }
 

@@ -1,5 +1,5 @@
 
-import { Component, ChangeDetectionStrategy, inject, output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, output, computed } from '@angular/core';
 import { MealService } from '../../services/meal.service';
 import { Meal, MealCategory } from '../../models/meal.model';
 import { CommonModule } from '@angular/common';
@@ -27,6 +27,8 @@ export class MealLogComponent {
   daysOfWeek = ['P', 'W', 'Ś', 'C', 'P', 'S', 'N'];
   todayIndex = new Date().getDay(); // Sunday is 0, so we adjust
 
+  isFavorite = (meal: Meal) => computed(() => this.mealService.favoriteMeals().some(fav => fav.name === meal.name));
+
   constructor() {
     this.mealCategories = [
       { name: 'Breakfast', meals: this.mealService.breakfastMeals, calories: this.mealService.breakfastCalories },
@@ -42,5 +44,9 @@ export class MealLogComponent {
 
   editPlan() {
     this.editPlanRequest.emit();
+  }
+
+  addMealToFavorites(meal: Meal) {
+    this.mealService.addFavoriteMeal(meal);
   }
 }

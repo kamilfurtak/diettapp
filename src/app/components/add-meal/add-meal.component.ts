@@ -30,7 +30,7 @@ export class AddMealComponent implements OnDestroy {
   category = signal<MealCategory | null>(null);
   status = signal<Status>('idle');
   imageDataUrl = signal<string | null>(null);
-  analysisResult = signal<Omit<Meal, 'category' | 'portion'>[]>([]);
+  analysisResult = signal<Omit<Meal, 'category' | 'portion' | 'date'>[]>([]);
   errorMessage = signal<string>('');
   mealForm: FormGroup;
   favoriteMeals = this.mealService.favoriteMeals;
@@ -65,6 +65,7 @@ export class AddMealComponent implements OnDestroy {
         ...this.mealForm.value,
         category: this.category(),
         portion: 1,
+        date: new Date().toISOString()
       };
       this.mealService.addMeals([newMeal]);
       this.router.navigate(['/log']);
@@ -80,6 +81,7 @@ export class AddMealComponent implements OnDestroy {
       fat: meal.fat,
       category: this.category()!,
       portion: 1,
+      date: new Date().toISOString()
     };
     this.mealService.addMeals([newMeal]);
     this.router.navigate(['/log']);
@@ -182,7 +184,7 @@ export class AddMealComponent implements OnDestroy {
     const result = this.analysisResult();
     const category = this.category();
     if (result.length > 0 && category) {
-      const mealsWithCategory: Meal[] = result.map(meal => ({ ...meal, category, portion: 1 }));
+      const mealsWithCategory: Meal[] = result.map(meal => ({ ...meal, category, portion: 1, date: new Date().toISOString() }));
       this.mealService.addMeals(mealsWithCategory);
       this.router.navigate(['/log']);
     }

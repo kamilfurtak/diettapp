@@ -17,6 +17,7 @@ import { firebaseConfig } from '../config/firebase.config';
 import { DietPlan } from '../models/diet-plan.model';
 import { Meal } from '../models/meal.model';
 import { FavoriteProduct } from '../models/favorite-product.model';
+import { FavoriteMeal } from '../models/favorite-meal.model';
 
 @Injectable({
   providedIn: 'root'
@@ -116,6 +117,19 @@ export class FirebaseService {
     return products;
   }
 
+  async getFavoriteMeals(userId: string): Promise<FavoriteMeal[]> {
+    if (!this.db) return [];
+    const mealsColRef = collection(this.db, 'users', userId, 'favoriteMeals');
+    const q = query(mealsColRef);
+    const querySnapshot = await getDocs(q);
+    const meals: FavoriteMeal[] = [];
+    querySnapshot.forEach((doc) => {
+      const data = doc.data() as Omit<FavoriteMeal, 'id'>;
+      meals.push({ id: doc.id, ...data });
+    });
+    return meals;
+  }
+
   async addFavoriteProduct(userId: string, product: FavoriteProduct): Promise<FavoriteProduct> {
     if (!this.db) {
       throw new Error('Firestore not available');
@@ -126,9 +140,24 @@ export class FirebaseService {
     return { id: docRef.id, ...productData } as FavoriteProduct;
   }
 
+  async addFavoriteMeal(userId: string, meal: Omit<FavoriteMeal, 'id'>): Promise<string> {
+    if (!this.db) {
+      throw new Error('Firestore not available');
+    }
+    const mealsColRef = collection(this.db, 'users', userId, 'favoriteMeals');
+    const docRef = await addDoc(mealsColRef, meal);
+    return docRef.id;
+  }
+
   async deleteFavoriteProduct(userId: string, productId: string): Promise<void> {
     if (!this.db) return;
     const productDocRef = doc(this.db, 'users', userId, 'favoriteProducts', productId);
     await deleteDoc(productDocRef);
+  }
+
+  async removeFavoriteMeal(userId: string, mealId: string): Promise<void> {
+    if (!this.db) return;
+    const mealDocRef = doc(this.db, 'users', userId, 'favoriteMeals', mealId);
+    await deleteDoc(mealDocRef);
   }
 }
