@@ -81,6 +81,13 @@ export class FirebaseService {
     await Promise.all(promises);
   }
 
+  async removeMeal(userId: string, mealId: string): Promise<void> {
+    if (!this.db) return;
+    const dateStr = this.getTodaysDateString();
+    const mealDocRef = doc(this.db, 'users', userId, 'meals', dateStr, 'entries', mealId);
+    await deleteDoc(mealDocRef);
+  }
+
   async getDietPlan(userId: string): Promise<DietPlan | null> {
     if (!this.db) return null;
     const planDocRef = doc(this.db, 'users', userId, 'plans', 'active');

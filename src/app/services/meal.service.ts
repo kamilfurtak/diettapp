@@ -140,6 +140,14 @@ export class MealService {
     }
   }
 
+  async removeMeal(mealId: string) {
+    this.meals.update(meals => meals.filter(m => m.id !== mealId));
+    const uid = this.firebaseService.user()?.uid;
+    if (uid) {
+      await this.firebaseService.removeMeal(uid, mealId);
+    }
+  }
+
   async addFavoriteMeal(meal: Meal) {
     const uid = this.firebaseService.user()?.uid;
     if (!uid) return;
