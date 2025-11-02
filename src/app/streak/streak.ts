@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { StreakService } from '../services/streak.service';
+import { CalendarComponent } from '../components/calendar/calendar';
 
 @Component({
   selector: 'app-streak',
   templateUrl: './streak.html',
   styleUrls: ['./streak.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, DatePipe]
+  imports: [CommonModule, DatePipe, CalendarComponent]
 })
 export class StreakComponent {
   private streakService = inject(StreakService);

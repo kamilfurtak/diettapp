@@ -28,4 +28,8 @@
   @if (lastMarkedDate(); as date) {
     <p class="mt-4 text-center text-sm text-gray-500">Last marked on: {{ date | date:'medium' }}</p>
   }
+
+  <div class="mt-8">
+    <app-calendar></app-calendar>
+  </div>
 </div>

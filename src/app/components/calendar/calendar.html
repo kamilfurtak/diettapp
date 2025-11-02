@@ -1,0 +1,16 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button (click)="previousMonth()" class="nav-btn">&lt;</button>
+    <h2 class="month-year">{{ currentMonth + 1 | number }}/{{ currentYear }}</h2>
+    <button (click)="nextMonth()" class="nav-btn">&gt;</button>
+  </div>
+  <div class="calendar-grid">
+    @for (day of daysInMonth; track day) {
+      <div class="calendar-day">
+        @if(day) {
+          <span>{{ day.getDate() }}</span>
+        }
+      </div>
+    }
+  </div>
+</div>

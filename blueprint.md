@@ -1,39 +1,43 @@
-# Diet & Fitness Tracker
+# Diet Tracker Application Blueprint
 
 ## Overview
 
-A modern, interactive, and visually appealing diet and fitness tracker built with the latest features of Angular. This application helps users log their meals, track their diet plan, and maintain a streak of healthy eating.
+This document outlines the plan for developing and enhancing the Diet Tracker application. The application is designed to help users track their daily meals, monitor their diet plans, and maintain a streak of healthy eating.
 
-## Style, Design, and Features
+## Implemented Features
 
-### Aesthetics
+### Core Features:
+- **Meal Logging:** Users can log their meals for different categories (Breakfast, Lunch, Dinner, Snacks).
+- **Diet Plan:** Users can set and view their daily diet plan, which includes target calories, protein, carbs, and fats.
+- **Streak Tracking:** The application tracks the user's streak of meeting their diet goals.
 
-*   **Modern Design:** Clean, visually balanced layout with ample spacing and polished styles.
-*   **Responsive:** Adapts to different screen sizes for a seamless experience on mobile and web.
-*   **Color Palette:** Vibrant and energetic color scheme with a wide range of hues.
-*   **Typography:** Expressive and relevant typography to enhance readability and understanding.
-*   **Iconography:** Modern, interactive icons to improve navigation and user experience.
+### UI/UX:
+- **Tab-based Navigation:** The application uses a bottom navigation bar to switch between the "Log," "Plan," and "Streak" views.
+- **Unified View:** All content is displayed within a single, integrated view, providing a seamless user experience.
+- **Responsive Design:** The application is designed to be responsive and work well on various screen sizes.
 
-### Core Features
+## Current Task: Implement the Streak Calendar
 
-*   **Meal Logging:** Users can log their meals, including breakfast, lunch, dinner, and snacks.
-*   **Diet Plan:** Users can set and view their daily diet plan, including calorie, protein, carb, and fat goals.
-*   **Streak Tracking:** A streak feature encourages users to maintain their healthy eating habits.
+### Plan:
 
-### Components
+**Phase 1: Implement the Streak Calendar UI**
 
-*   **Standalone Components:** All components are standalone for a streamlined architecture.
-*   **OnPush Change Detection:** `ChangeDetectionStrategy.OnPush` is used in all components for optimal performance.
-*   **Native Control Flow:** The new `@` syntax for control flow is used in templates.
+1.  **Analyze the existing `streak.ts` and `streak.html` files:** Examine the current implementation of the streak component to understand its structure, data, and logic.
+2.  **Create a dedicated calendar component:** Generate a new `CalendarComponent` to encapsulate the calendar's functionality and keep the code organized.
+3.  **Implement the calendar grid:** Use HTML and CSS to create a visually appealing calendar grid that displays the days of the week and the days of the month.
+4.  **Display the current month and year:** Add controls to the calendar to allow users to navigate between months and view the current month and year.
+5.  **Integrate the calendar component into the streak view:** Add the new `CalendarComponent` to the `streak.html` file to display it within the streak view.
 
-### Accessibility
+**Phase 2: Track and Display Streaks**
 
-*   The application is designed with accessibility in mind to empower all users.
+1.  **Update the `CalendarComponent` to receive streak data:** Modify the `CalendarComponent` to accept an array of dates representing the user's streak.
+2.  **Highlight streak days on the calendar:** Add logic to the `CalendarComponent` to visually highlight the days the user has maintained their streak.
+3.  **Create a mock streak service:** Develop a `StreakService` to provide a hardcoded array of dates for testing and development purposes.
+4.  **Integrate the streak service with the streak view:** Inject the `StreakService` into the `StreakComponent` and pass the streak data to the `CalendarComponent`.
 
-## Current Plan
+**Phase 3: Refine and Polish**
 
-I will continue to enhance the application with the following features:
+1.  **Add styling and animations:** Enhance the visual appeal of the calendar and streak view with custom styling and animations.
+2.  **Ensure responsive design:** Verify that the calendar and streak view are responsive and adapt to different screen sizes.
+3.  **Test and debug:** Thoroughly test the implementation to identify and fix any bugs.
 
-*   **Add a stats page:** This page will show the user's progress and statistics.
-*   **Add a settings page:** This page will allow the user to customize the application.
-*   **Add a social sharing feature:** This feature will allow users to share their progress with their friends.
