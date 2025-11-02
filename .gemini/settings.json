@@ -9,11 +9,13 @@
       ]
     },
     "chrome-devtools": {
-      "type": "stdio",
-      "command": "CHROME_HEADLESS=true npx",
+      "command": "npx",
       "args": [
-        "chrome-devtools-mcp@latest"
-      ]
-    }
+        "chrome-devtools-mcp@latest",
+        "--headless=true",
+        "--executablePath=/nix/store/dbzr3bfkqg0dlcq657rhf2zhjg2ryi8i-idx-builtins/bin/chromium-browser",
+        "--browser-url=http://localhost:9000"
+      ] 
+    } 
   }
 }

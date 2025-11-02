@@ -1,5 +1,13 @@
 {
   "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--headless=true",
+        "--executablePath=/nix/store/dbzr3bfkqg0dlcq657rhf2zhjg2ryi8i-idx-builtins/bin/chromium-browser"
+      ]
+    },
     "angular-cli": {
       "command": "npx",
       "args": [
@@ -18,14 +26,9 @@
     },
     "nx-mcp": {
       "command": "npx",
-      "args": ["nx-mcp@latest"]
-    },
-    "chrome-devtools": {
-      "command": "npx",
       "args": [
-        "chrome-devtools-mcp@latest",
-        "--headless=true"
+        "nx-mcp@latest"
       ]
-    } 
+    }
   }
 }

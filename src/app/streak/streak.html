@@ -16,13 +16,18 @@
   </div>
 
   <div class="mt-8 text-center">
-    @if (isDayMarked()) {
-      <p class="text-lg text-green-400">You've marked your streak for today!</p>
-    } @else {
-      <button (click)="markDay()" class="w-full bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
-        Mark Today as Complete
-      </button>
-    }
+    <button 
+      [disabled]="isDayMarked()" 
+      (click)="markDay()" 
+      class="w-full bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+      [class.opacity-50]="isDayMarked()"
+      [class.cursor-not-allowed]="isDayMarked()">
+      @if (isDayMarked()) {
+        <span>You've marked your streak for today!</span>
+      } @else {
+        <span>Mark Today as Complete</span>
+      }
+    </button>
   </div>
 
   @if (lastMarkedDate(); as date) {
