@@ -57,3 +57,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+Kamil potrzebuje pomoce z deploymentem apki npm z mojego repo na hosting (mam seohost ale moze być jakikolwiek) zapłace co trzeba. Mecze sie juz z tym nty dzien. pozdr Marcin 
